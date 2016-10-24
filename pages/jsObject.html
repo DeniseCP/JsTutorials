@@ -15,7 +15,7 @@
 	document.write(denise.name + " "+ denise.age);
 	</script>-->
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	//Object Initializer
 	//Faster than Constructor function
 
@@ -30,6 +30,25 @@
 	
 	document.write(taylor.name +" is "+ taylor.age);
 	document.write("\n"+bucky.name +" is "+ bucky.age);
+</script> -->
+<script type="text/javascript">
+	function person(name, age){
+		this.age = age;
+		this.name = name;
+		
+		this.yearsUntilRetire = yearsLeft;
+	}
+	
+	function yearsLeft(){
+		var numbYears = 65 - this.age;
+		return numbYears;
+	}
+	
+	//var nathalie = new person("Nathalie", 28);
+	var denise = new person("Denise", 29);
+	
+	//document.write(nathalie.yearsUntilRetire());
+	document.write(denise.yearsUntilRetire());
 </script>
 </head>
 <body>

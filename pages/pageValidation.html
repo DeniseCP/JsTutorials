@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+</head>
+<body>
+
+	<form name="form1">
+		Username: <input type="text" name="username"/>
+		Password: <input type="password" name="password"/>
+		<input type="button" value="Submit!" onclick="validate();"/>
+	</form>
+	
+	<p id="demo"></p>
+
+
+<script type="text/javascript">
+	function validate(){
+		if(document.form1.username.value !=""
+				&& document.form1.password.value !=""){
+			document.getElementById("demo").innerHTML = "success";
+		}else{
+			document.getElementById("demo").innerHTML = "try again";
+		}
+	}
+</script>
+</body>
+</html>

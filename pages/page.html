@@ -1,9 +1,14 @@
 <!doctype html>
 <html lang="en" ng-app='app1'
 	ng-init="person ={fName: 'Denise', lName:'Pereira'}; capitals=[{city: 'Sao Paulo', state:'Sao Paulo'},
-	{city: 'Rio de Janeiro', state:'Rio de Janeiro'}, {city: 'Belo Horizonte', state:'Minas Gerais'}];">
+	{city: 'Rio de Janeiro', state:'Rio de Janeiro'}, {city: 'Belo Horizonte', state:'Minas Gerais'}];" ng-cloak>
 
 <head>
+    <style>
+        [ng\:cloak],[ng-cloak], .ng-cloak}{
+            display: none;
+        }
+    </style>
 <meta charset="utf-8" />
 <title>Angular JS</title>
 </head>
@@ -32,7 +37,7 @@
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="../includes/js/javascript.js"></script>
+    <script src="../includes/js/example.js"></script>
 
 </body>
 </html>

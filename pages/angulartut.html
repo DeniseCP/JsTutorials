@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app2">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Angular JS Tutorial</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="../includes/js/example2.js"></script>
 </head>
 <body>
+    <h4 ng-controller="ctrl1"> First Random number: {{randomNum1}}</h4>
+    <h4 ng-controller="ctrl1"> Second Random number: {{randomNum2}}</h4>
+
+    <h4 ng-controller="badCtrl">Bad feeling of the day {{bad}}</h4>
+    <h4 ng-controller="goodCtrl">Good feeling of the day {{good}}</h4>
+
+
 
 </body>
 </html>

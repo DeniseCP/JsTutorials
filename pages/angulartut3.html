@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app3" ng-cloak>
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Tutorial 3</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="../includes/js/example3.js"></script>
+</head>
+<body>
+    <div ng-controller="gListCtrl" id="groceryList">
+        <h3 class="ListTitle">{{groceries.length}} Groceries to
+        get</h3>
+        <h3 class="ListTitle">
+            <span data-ng-bind="groceries.length"></span> Groceries to
+            get
+        </h3>
+
+        <ol style="margin: 0 0 -15px 0;">
+            <li>{{groceries[0].item}}</li>
+        </ol>
+
+        <ol start="2">
+            <li ng-repeat="grocery in groceries" ng-if="$index > 0 ">{{grocery.item}} {{$index}}</li>
+        </ol>
+
+        <table>
+            <tr ng-repeat-start="grocery in groceries" ng-if="grocery.purchased == false">
+                <td>
+                    {{grocery.item}}
+                </td>
+                <td>
+                    {{grocery.purchased}}
+                </td>
+            </tr>
+            <tr ng-repeat-end></tr>
+        </table>
+
+        <label>Change 1st Item: </label>
+        <input ng-model="groceries[0].item"/>
+
+        <h3>Grocery List</h3>
+        <div ng-include="'grocerylist1.html'"></div>
+        <lable>
+            <input type="checkbox" ng-model="showList">
+            Show Unordered List
+        </lable>
+        <ng-include src="getList()"></ng-include>
+
+        <label> Type a Number (1-5):
+            <input type="text" ng-model="someNumber"/>
+        </label>
+
+        <div ng-switch="someNumber">
+            <p ng-switch-when="1">You entered 1</p>
+            <p ng-switch-when="2">You entered 2</p>
+            <p ng-switch-when="3">You entered 3</p>
+            <p ng-switch-when="4">You entered 4</p>
+            <p ng-switch-when="5">You entered 5</p>
+            <p ng-switch-default="1">WRONG PUNK!</p>
+        </div>
+    </div>
+</body>
+</html>

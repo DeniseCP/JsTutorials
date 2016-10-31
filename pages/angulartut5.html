@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app5" ng-cloak>
+<head>
+    <meta charset="UTF-8">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="../includes/js/example5.js"></script>
+
+    <title>AngularJS Tutorial 5</title>
+    <link rel="stylesheet" href="../includes/css/angulartut5.css"/>
+</head>
+<body>
+    <div ng-controller="gListCtrl">
+        <h3>Grocery List</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Purchased</th>
+                </tr>
+            </thead>
+            <tr ng-repeat="grocery in groceries">
+                <td>{{grocery.item}}</td>
+                <td>
+                    <input type="checkbox" ng-model="grocery.purchased">
+                </td>
+            </tr>
+        </table>
+        <br>
+        <label>New Item: <input type="text" ng-model="newItem" /></label>
+        <button ng-click="addItem(newItem)">Add Item</button>
+
+        <h4>{{missingNewItemError}}</h4>
+    </div>
+
+</body>
+</html>

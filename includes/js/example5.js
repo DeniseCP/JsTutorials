@@ -23,3 +23,29 @@ app5.controller('gListCtrl', function($scope){
         }
     };
 });
+
+app5.controller('userCtrl', function($scope){
+    $scope.user = [{
+        fName: "Denise",
+        lName : "Pereira",
+        street: "446 49th E Ave",
+        subscribe : "Subscribe",
+        delivery : "Email"
+    }];
+
+    $scope.saveUser = function (userInfo){
+        if($scope.userForm.$valid){
+            $scope.user.push({
+                fName : userInfo.fName,
+                lName : userInfo.lName,
+                street : userInfo.street,
+                subscribe : userInfo.subscribe,
+                delivery : userInfo.delivery
+            });
+            console.log("User Saved")
+        }else{
+            console.log("Error: Couldn't save user")
+            }
+    };
+});
+

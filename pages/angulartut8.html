@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app8" ng-cloak>
+<head>
+    <link rel="stylesheet" href="../includes/css/angulartut6.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="../includes/js/example8.js"></script>
+    <script src="../includes/js/filter.js"></script>
+    <meta charset="UTF-8">
+    <title>Angular JS Tutorial 8</title>
+</head>
+<body>
+<!--Filter with Angular JS-->
+    <div ng-controller="mainCtrl">
+        <!--Filter for UPPERCASE and lowercase-->
+        <label>Make Uppercase: </label>
+        <input type="text" ng-model="name">
+        <p>Uppercase : {{name | uppercase}}</p>
+        <p>Lowercase : {{name | lowercase}}</p>
+
+        <!--Filter for Currency-->
+        <label>Make Currency: </label>
+        <input type="text" ng-model="money">
+        <p>Currency : {{money | currency}}</p>
+
+        <ul>
+            <li ng-repeat="student in student.gpas | filter : studentName | orderBy:'-gpa'">
+                {{'Name: ' + student.name + ' : GPA: ' + student.gpa}}
+            </li>
+        </ul>
+
+        <!--Number filter-->
+        <label>Number filter: </label>
+        <input type="text" ng-model="numVal">
+        <p>Default : {{numVal | number}}</p>
+        <p>No Fractions : {{numVal | number:0}}</p>
+        <p>Negative 4 Decimal : {{-numVal | number:4}}</p>
+
+        <p>Date 1 : {{currDate | date : 'medium'}}</p>
+        <p>Date 2 : {{currDate | date : "MM/yy 'at' h:mm:ssa"}}</p>
+
+        <p>Default : {{randomStr}}</p>
+        <p>{{numVal}} Characters : {{randomStr | limitTo : numVal}}</p>
+
+        <ul>
+            <li ng-repeat="item in randArray | limitTo: numVal">
+                {{item}}
+            </li>
+        </ul>
+
+        <br><br>
+
+        <p>--------------------------------------</p>
+        <p>Using my own filter: </p>
+
+        <p>
+            <ul>
+                <li ng-repeat="item in weather">
+                    {{item.day + ':'}} {{item.rain | raining}}
+                </li>
+            </ul>
+        </p>
+    </div>
+</body>
+</html>
